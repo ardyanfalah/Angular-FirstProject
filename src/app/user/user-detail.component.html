@@ -1,0 +1,35 @@
+<div class="card" *ngIf='user' >
+  <div class="card-reader">
+      {{pageTitle + ': '+user.id}}
+  </div>
+  <div class="col-sm-10 align-items-center">
+    <form #userForm="ngForm">
+      <div class="form-group" >
+        <label>ID</label>
+        <input type="text" class="form-control" id="formId" name="id" [(ngModel)]="user.id" placeholder={{user.id}}>
+        </div>
+      <div class="form-group">
+        <label >User ID</label>
+        <input type="number" class="form-control" id="formUserId" name="userId" [(ngModel)]="user.userId" placeholder={{user.userId}} >
+      </div>
+      <div class="form-group">
+        <label >Title</label>
+        <input type="text" class="form-control" [(ngModel)]="user.title" id="title" name="title" placeholder={{user.title}}>
+      </div>
+      <div class="form-group" >
+        <label>Body</label>
+        <textarea class="form-control" id="formBody" [(ngModel)]="user.body" name="body" rows="3" placeholder={{user.body}}></textarea>
+      </div>
+      
+      <button type="button" (click)="saveEdited()" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-outline-secondary"
+            (click)="onBack()"
+            style="width: 80px">
+      <i class="fa fa-chevron-left">Back</i>
+
+    </button>
+  </div>
+</div>

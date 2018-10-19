@@ -1,23 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { UserComponent } from './user.component';
 import { UserDetailComponent } from './user-detail.component';
-import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   imports: [
+    CommonModule,
+    FormsModule,
     RouterModule.forChild([
-      {path: 'user', component: UserComponent},
-      {path: 'user/:id', component:UserDetailComponent}
-    ]),
-    CommonModule
+      {path: 'users', component: UserComponent},
+      {path: 'users/:id', component:UserDetailComponent}
+    ])
     
   ],
   declarations: [
     UserComponent,
     UserDetailComponent
+  ],
+  exports: [
+    FormsModule,
+    CommonModule
   ]
 })
 export class UserModule { }

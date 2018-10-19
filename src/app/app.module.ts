@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {RouterModule} from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './Home/welcome.component';
-import { UserModule } from './user/user.module';
+import { UserModule } from './users/user.module';
 
 @NgModule({
   declarations: [
@@ -17,13 +17,12 @@ import { UserModule } from './user/user.module';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([,
+    RouterModule.forRoot([
       {path: 'welcome', component:WelcomeComponent}
     ]),
-    UserModule,
+    UserModule
 
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
